@@ -6,11 +6,22 @@
 /*   By: sjiseong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 16:34:06 by sjiseong          #+#    #+#             */
-/*   Updated: 2019/07/28 19:58:25 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 21:56:32 by sengle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "colle_2.h"
+
+/*
+** static char array variables for each rectangle style type symbol
+** indexed by type parameter
+*/
+static char	g_vertical[RUSH_TYPES] = { '|', '*', 'B', 'B', 'B' };
+static char	g_horizontal[RUSH_TYPES] = { '-', '*', 'B', 'B', 'B' };
+static char	g_upper_left[RUSH_TYPES] = { 'o', '/', 'A', 'A', 'A' };
+static char	g_lower_left[RUSH_TYPES] = { 'o', '\\', 'C', 'A', 'C' };
+static char	g_upper_right[RUSH_TYPES] = { 'o', '\\', 'A', 'C', 'C' };
+static char	g_lower_right[RUSH_TYPES] = { 'o', '/', 'C', 'C', 'A' };
 
 int	check_first_line(int rush_num, char *buf, int width)
 {

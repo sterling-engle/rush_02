@@ -6,7 +6,7 @@
 /*   By: davigarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:40:55 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 20:07:02 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 21:55:45 by sengle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,11 @@
 **
 ** sengle's group:
 **
-** Sterling Engle (sengle),
+** sengle, sjiseong, davigarc
+**
 ** macro definitions for rectangle types, min & max, and top & bottom sides
 */
 # define RUSH_TYPES 5
-
-
-/*
-** static char array variables for each rectangle style type symbol
-** indexed by type parameter
-*/
-
-static char	g_vertical[RUSH_TYPES] = { '|', '*', 'B', 'B', 'B' };
-static char	g_horizontal[RUSH_TYPES] = { '-', '*', 'B', 'B', 'B' };
-static char	g_upper_left[RUSH_TYPES] = { 'o', '/', 'A', 'A', 'A' };
-static char	g_lower_left[RUSH_TYPES] = { 'o', '\\', 'C', 'A', 'C' };
-static char	g_upper_right[RUSH_TYPES] = { 'o', '\\', 'A', 'C', 'C' };
-static char	g_lower_right[RUSH_TYPES] = { 'o', '/', 'C', 'C', 'A' };
 
 int	check_rush(char *buf, int width, int length, int count);
 int	parse_rush(char *buf);
