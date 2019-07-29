@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colle_2.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sengle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: davigarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:40:55 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 19:59:45 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 20:07:02 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,39 +18,11 @@
 **
 ** sengle's group:
 **
-** Sterling Engle (sengle), 
-*/
-
-/*
+** Sterling Engle (sengle),
 ** macro definitions for rectangle types, min & max, and top & bottom sides
 */
-#define RUSH_TYPES 5
-#define RUSH_TYPE_00 0
-#define RUSH_TYPE_01 1
-#define RUSH_TYPE_02 2
-#define RUSH_TYPE_03 3
-#define RUSH_TYPE_04 4
-#define RUSH_MIN RUSH_TYPE_00
-#define RUSH_MAX RUSH_TYPE_04
-#define RECT_TOP 1
-#define RECT_BOTTOM 2
+# define RUSH_TYPES 5
 
-#define RUSH_00	0x0001
-#define	RUSH_01	0x0002
-#define	RUSH_02	0x0004
-#define	RUSH_03	0x0008
-#define	RUSH_04	0x0010
-
-typedef struct		s_rush_type
-{
-	char	upper_left;
-	char	upper_right;
-	char	lower_left;
-	char	lower_right;
-	char	horizontal;
-	char	vertical;
-	int		type;
-}					t_rush_type;
 
 /*
 ** static char array variables for each rectangle style type symbol
@@ -63,16 +35,6 @@ static char	g_upper_left[RUSH_TYPES] = { 'o', '/', 'A', 'A', 'A' };
 static char	g_lower_left[RUSH_TYPES] = { 'o', '\\', 'C', 'A', 'C' };
 static char	g_upper_right[RUSH_TYPES] = { 'o', '\\', 'A', 'C', 'C' };
 static char	g_lower_right[RUSH_TYPES] = { 'o', '/', 'C', 'C', 'A' };
-
-/*
-'o', RUSH_OO
-'/', RUSH_01
-'A', RUSH_02 | RUSH_03 | RUSH_04		1 x 1  'A'
-
-rush_size()
-
-eat characters across the row ('B'
-*/
 
 int	check_rush(char *buf, int width, int length, int count);
 int	parse_rush(char *buf);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sengle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: davigarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:26:53 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 19:40:04 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 20:07:30 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 
-#define	MAX_BUF 32768
-
-#include <stdio.h>
+#define MAX_BUF	32768
 
 int	main(int argc, char **argv)
 {
