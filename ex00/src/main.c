@@ -6,7 +6,7 @@
 /*   By: davigarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:26:53 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 20:07:30 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 21:29:02 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 #define MAX_BUF	32768
 
+#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
 	int		buf_size;
@@ -27,12 +29,10 @@ int	main(int argc, char **argv)
 		return (1);
 	if (argv[0][0] == 0)
 		return (1);
-	buf = malloc(MAX_BUF + 1);
+	buf = (char*)malloc(sizeof(char) * (MAX_BUF + 10000));
 	buf_size = read(0, buf, MAX_BUF);
-	if (buf_size > 0)
-	{
-		parse_rush(buf);
-		free(buf);
-	}
+	buf[buf_size] = 0;
+	parse_rush(buf);
+	free(buf);
 	return (0);
 }
