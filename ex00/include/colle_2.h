@@ -6,7 +6,7 @@
 /*   By: davigarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:40:55 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 21:55:45 by sengle           ###   ########.fr       */
+/*   Updated: 2019/07/28 21:59:12 by sengle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 */
 # define RUSH_TYPES 5
 
-int	check_rush(char *buf, int width, int length, int count);
-int	parse_rush(char *buf);
-void	print_rush(int rush_type, int width, int length, int count);
+int			check_rush(char *buf, int width, int length, int count);
+int			parse_rush(char *buf);
+void		print_rush(int rush_type, int width, int length, int count);
 
 #endif

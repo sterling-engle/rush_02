@@ -6,7 +6,7 @@
 /*   By: sjiseong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 16:34:06 by sjiseong          #+#    #+#             */
-/*   Updated: 2019/07/28 21:56:32 by sengle           ###   ########.fr       */
+/*   Updated: 2019/07/28 21:58:19 by sengle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	check_first_line(int rush_num, char *buf, int width)
 		}
 		i++;
 	}
-	if (buf[i] != '\n')
+	if (buf[i] != '\n' && buf[i] != '\0')
 		return (0);
 	return (1);
 }
@@ -105,6 +105,32 @@ int	check_last_line(int rush_num, char *buf, int width)
 	return (1);
 }
 
+int	check_each_line(char *buf, int width, int length, int i)
+{
+	int	j;
+
+	j = -1;
+	while (++j < length)
+	{
+		if (j == 0)
+		{
+			if (!check_first_line(i, buf + j * (width + 1), width))
+				break ;
+		}
+		else if (j == length - 1)
+		{
+			if (!check_last_line(i, buf + j * (width + 1), width))
+				break ;
+		}
+		else
+		{
+			if (!check_middle_line(i, buf + j * (width + 1), width))
+				break ;
+		}
+	}
+	return (j);
+}
+
 int	check_rush(char *buf, int width, int length, int count)
 {
 	int	i;
@@ -113,25 +139,7 @@ int	check_rush(char *buf, int width, int length, int count)
 	i = -1;
 	while (++i < RUSH_TYPES)
 	{
-		j = -1;
-		while (++j < length)
-		{
-			if (j == 0)
-			{
-				if (!check_first_line(i, buf + j * (width + 1), width))
-					break ;
-			}
-			else if (j == length - 1)
-			{
-				if (!check_last_line(i, buf + j * (width + 1), width))
-					break ;
-			}
-			else
-			{
-				if (!check_middle_line(i, buf + j * (width + 1), width))
-					break ;
-			}
-		}
+		j = check_each_line(buf, width, length, i);
 		if (j == length)
 		{
 			print_rush(i, width, length, count);

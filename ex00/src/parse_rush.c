@@ -6,7 +6,7 @@
 /*   By: sengle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:22:40 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 20:07:43 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 21:43:51 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	get_length(char *buf)
 			length++;
 		i++;
 	}
-	return (length);
+	return (length ? length : 1);
 }
 
 int	parse_rush(char *buf)
@@ -49,7 +49,6 @@ int	parse_rush(char *buf)
 	width = get_width(buf);
 	length = get_length(buf);
 	count = check_rush(buf, width, length, count);
-	
 	if (count == 0)
 		write(1, "aucune", 6);
 	write(1, "\n", 1);
