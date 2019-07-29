@@ -6,7 +6,7 @@
 /*   By: sengle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:40:55 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 17:20:33 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 19:59:45 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,9 @@ rush_size()
 
 eat characters across the row ('B'
 */
+
+int	check_rush(char *buf, int width, int length, int count);
+int	parse_rush(char *buf);
+void	print_rush(int rush_type, int width, int length, int count);
 
 #endif

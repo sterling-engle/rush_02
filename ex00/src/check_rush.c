@@ -6,7 +6,7 @@
 /*   By: sjiseong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 16:34:06 by sjiseong          #+#    #+#             */
-/*   Updated: 2019/07/28 17:24:45 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/28 19:58:25 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,18 +112,18 @@ int	check_rush(char *buf, int width, int length, int count)
 			}
 			else if (j == length - 1)
 			{
-				if (!check_middle_line(i, buf + j * (width + 1), width))
+				if (!check_last_line(i, buf + j * (width + 1), width))
 					break ;
 			}
 			else
 			{
-				if (!check_last_line(i, buf + j * (width + 1), width))
+				if (!check_middle_line(i, buf + j * (width + 1), width))
 					break ;
 			}
 		}
 		if (j == length)
 		{
-			print_rush(i);
+			print_rush(i, width, length, count);
 			count++;
 		}
 	}

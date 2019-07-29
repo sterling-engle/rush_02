@@ -6,23 +6,31 @@
 /*   By: sengle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:26:53 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/27 22:40:28 by sengle           ###   ########.fr       */
+/*   Updated: 2019/07/28 19:40:04 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "colle-2.h"
+#include "colle_2.h"
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
 
-#define	MAX_BUF	32768
+#define	MAX_BUF 32768
+
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
 	int		buf_size;
-	char	*buf[MAX_BUF];
+	char	*buf;
 
-	buf = malloc(MAX_BUF);
-
-	buf_size = read(0, &buf, MAX_BUF);
-
+	if (argc < 1)
+		return (1);
+	if (argv[0][0] == 0)
+		return (1);
+	buf = malloc(MAX_BUF + 1);
+	buf_size = read(0, buf, MAX_BUF);
 	if (buf_size > 0)
 	{
 		parse_rush(buf);
