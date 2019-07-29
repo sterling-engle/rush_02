@@ -6,11 +6,11 @@
 /*   By: sengle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:40:55 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/27 23:15:06 by sengle           ###   ########.fr       */
+/*   Updated: 2019/07/28 17:20:33 by sjiseong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef COLLE_2_H
+#ifndef COLLE_2_H
 # define COLLE_2_H
 
 /*
@@ -56,17 +56,15 @@ typedef struct		s_rush_type
 ** static char array variables for each rectangle style type symbol
 ** indexed by type parameter
 */
+
+static char	g_vertical[RUSH_TYPES] = { '|', '*', 'B', 'B', 'B' };
+static char	g_horizontal[RUSH_TYPES] = { '-', '*', 'B', 'B', 'B' };
+static char	g_upper_left[RUSH_TYPES] = { 'o', '/', 'A', 'A', 'A' };
+static char	g_lower_left[RUSH_TYPES] = { 'o', '\\', 'C', 'A', 'C' };
+static char	g_upper_right[RUSH_TYPES] = { 'o', '\\', 'A', 'C', 'C' };
+static char	g_lower_right[RUSH_TYPES] = { 'o', '/', 'C', 'C', 'A' };
+
 /*
-static char	g_vertical[NUM_TYPES] = { '|', '*', 'B', 'B', 'B' };
-static char	g_horizontal[NUM_TYPES] = { '-', '*', 'B', 'B', 'B' };
-static char	g_upper_left[NUM_TYPES] = { 'o', '/', 'A', 'A', 'A' };
-static char	g_upper_left[NUM_TYPES][NUM_TYPES] = { 'o', 
-	'/', 'A', 'A', 'A' };
-static char	g_lower_left[NUM_TYPES] = { 'o', '\\', 'C', 'A', 'C' };
-static char	g_upper_right[NUM_TYPES] = { 'o', '\\', 'A', 'C', 'C' };
-static char	g_lower_right[NUM_TYPES] = { 'o', '/', 'C', 'C', 'A' };
-
-
 'o', RUSH_OO
 '/', RUSH_01
 'A', RUSH_02 | RUSH_03 | RUSH_04		1 x 1  'A'
