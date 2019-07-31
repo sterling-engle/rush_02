@@ -6,7 +6,7 @@
 /*   By: sengle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 23:54:53 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 20:07:55 by sjiseong         ###   ########.fr       */
+/*   Updated: 2019/07/31 14:59:10 by sengle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 	return ;
 }
+
+/*
+**	int	check_negative(int nb, char *arr)
+**
+**	handles the special case of not being able to represent
+**	-(-2,147,483,648) as a positive 32-bit integer, since the
+**	largest positive int is 2,147,483,647.
+*/
 
 int		check_negative(int nb, char *arr)
 {
@@ -33,6 +41,14 @@ int		check_negative(int nb, char *arr)
 	}
 	return (nb);
 }
+
+/*
+**	void	ft_putnbr(int nb)
+**
+**	handles the special case of not being able to represent
+**	-(-2,147,483,648) as a positive 32-bit integer, since the
+**	largest positive int is 2,147,483,647.
+*/
 
 void	ft_putnbr(int nb)
 {
@@ -61,6 +77,12 @@ void	ft_putnbr(int nb)
 	}
 	return ;
 }
+
+/*
+**	void print_rush(int rush_type, int width, int length, int count)
+**
+**	writes out the rush type and box dimensions per our assignment
+*/
 
 void	print_rush(int rush_type, int width, int length, int count)
 {
