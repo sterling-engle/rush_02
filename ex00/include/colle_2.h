@@ -6,7 +6,7 @@
 /*   By: davigarc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 22:40:55 by sengle            #+#    #+#             */
-/*   Updated: 2019/07/28 21:59:12 by sengle           ###   ########.fr       */
+/*   Updated: 2019/07/31 13:38:12 by sengle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 /*
 ** Rush 02
 **
-** sengle's group:
+** sengle's group: Son Jiseong, Sterling Engle and David Garces
 **
 ** sengle, sjiseong, davigarc
 **
-** macro definitions for rectangle types, min & max, and top & bottom sides
+** macro definitions for number of rectangle types, and public functions
 */
 # define RUSH_TYPES 5
 
